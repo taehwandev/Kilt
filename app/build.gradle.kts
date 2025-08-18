@@ -1,10 +1,11 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.tech.thdev.android.application)
+    alias(libs.plugins.tech.thdev.android.library.hilt)
 }
 
 android {
+    val (majorVersion, minorVersion, patchVersion, code) = getVersionInfo()
+
     namespace = "tech.thdev.kilt"
     compileSdk {
         version = release(36)
@@ -12,10 +13,10 @@ android {
 
     defaultConfig {
         applicationId = "tech.thdev.kilt"
-        minSdk = 24
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = code
+        versionName = "$majorVersion.$minorVersion.$patchVersion"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,21 +39,19 @@ android {
     }
 }
 
-dependencies {
+ksp {
+    arg("moduleName", project.name)
+    arg("rootDir", rootDir.absolutePath)
+}
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+dependencies {
+    implementation(libs.kotlin.stdlib)
+
+    implementation(libs.androidx.core)
+
+    implementation(libs.androidx.compose.activity)
+
+    rootProject.subprojects.filterProject {
+        implementation(it)
+    }
 }
