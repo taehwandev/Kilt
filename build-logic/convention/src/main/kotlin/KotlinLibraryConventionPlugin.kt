@@ -9,7 +9,6 @@ class KotlinLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.jvm")
 
-                apply("tech.thdev.kotlin.library.unit.test")
                 apply("tech.thdev.kotlin.library.verify.detekt")
                 apply("tech.thdev.kotlin.library.verify.test")
             }

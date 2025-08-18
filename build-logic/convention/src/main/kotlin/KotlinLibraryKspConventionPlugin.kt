@@ -15,7 +15,6 @@ class KotlinLibraryKspConventionPlugin : Plugin<Project> {
             configureKspSourceSets()
 
             extensions.configure<KspExtension> {
-                arg("moduleName", project.name)
                 arg("rootDir", rootDir.absolutePath)
             }
         }

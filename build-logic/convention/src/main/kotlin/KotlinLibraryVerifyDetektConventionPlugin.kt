@@ -16,6 +16,7 @@ class KotlinLibraryVerifyDetektConventionPlugin : Plugin<Project> {
 
             dependencies {
                 "detektPlugins"(findLibrary("verify-detektFormatting"))
+                "detektPlugins"(findLibrary("verify-twitter-detektComposeRule"))
             }
         }
     }

@@ -24,4 +24,9 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "Kilt"
 include(":app")
- 
+
+// library
+include(
+    ":core:kilt-generate-annotations",
+    ":core:kilt-generate-ksp",
+)
