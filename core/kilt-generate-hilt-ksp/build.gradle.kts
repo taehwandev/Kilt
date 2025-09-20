@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.tech.thdev.android.library)
 }
 
-setNamespace("kilt.generate.hilt.ksp")
+setNamespace("generate.hilt.ksp")
 
 dependencies {
     implementation(libs.ksp)

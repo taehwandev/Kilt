@@ -61,8 +61,6 @@ compose-activity = "1.11.0"
 ## Google
 # https://github.com/material-components/material-components-android/releases
 google-material = "1.13.0"
-# https://github.com/google/gson
-gson = "2.11.0"
 
 ## Network
 # https://square.github.io/okhttp/
@@ -132,17 +130,7 @@ androidx-compose-navigation-hilt = { module = "androidx.hilt:hilt-navigation-com
 ## Google
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 
-## JSON
-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
-
 ## Network
-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "network-okhttp" }
-okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "network-okhttp" }
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "network-retrofit" }
-retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "network-retrofit" }
-retrofit-converter-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "network-retrofit" }
-
-# Legacy network (keeping for compatibility)
 network-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "network-okhttp" }
 network-okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "network-okhttp" }
 network-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "network-retrofit" }
@@ -169,7 +157,6 @@ test-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "test-
 
 ## Test coroutine
 test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-test-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 test-coroutines-turbine = { module = "app.cash.turbine:turbine", version.ref = "coroutines-turbine" }
 
 ## Test Hilt

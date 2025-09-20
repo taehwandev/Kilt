@@ -31,3 +31,11 @@ include(
     ":core:kilt-generate-dagger-ksp",
     ":core:kilt-generate-hilt-ksp",
 )
+
+// core-app modules
+include(
+    ":core-app:data:poke-repository",
+    ":core-app:data:poke-repository-api",
+    ":core-app:network:network",
+    ":core-app:network:network-api",
+)
