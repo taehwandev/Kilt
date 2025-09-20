@@ -13,11 +13,11 @@ class AndroidLibraryFeatureComposeConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                implementation(project(":core:ui:composable-architecture-system"))
-                implementation(project(":core:ui:composable-architecture-alert-system"))
-                implementation(project(":core:ui:composable-architecture-router-system"))
+//                implementation(project(":core:ui:composable-architecture-system"))
+//                implementation(project(":core:ui:composable-architecture-alert-system"))
+//                implementation(project(":core:ui:composable-architecture-router-system"))
 
-                implementation(project(":sample:core:ui:resource"))
+//                implementation(project(":sample:core:ui:resource"))
             }
         }
     }

@@ -39,3 +39,9 @@ include(
     ":core-app:network:network",
     ":core-app:network:network-api",
 )
+
+// feature modules
+include(
+    ":feature:main",
+    ":feature:home",
+)

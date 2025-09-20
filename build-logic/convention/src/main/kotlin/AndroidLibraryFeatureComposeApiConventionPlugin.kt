@@ -13,7 +13,7 @@ class AndroidLibraryFeatureComposeApiConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                implementation(project(":core:ui:composable-architecture-router-system"))
+//                implementation(project(":core:ui:composable-architecture-router-system"))
             }
         }
     }

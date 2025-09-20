@@ -1,8 +1,6 @@
 plugins {
-    alias(libs.plugins.tech.thdev.android.library)
+    alias(libs.plugins.tech.thdev.kotlin.library)
 }
-
-setNamespace("generate.hilt.ksp")
 
 dependencies {
     implementation(libs.ksp)

@@ -24,7 +24,7 @@ import javax.inject.Singleton
 @Singleton
 @KiltGenerateModule
 class PokemonRepositoryImpl @Inject constructor(
-  private val apiService: PokeApiService
+  private val apiService: PokeApiService,
 ) : PokemonRepository {
 
   override suspend fun getPokemonList(
