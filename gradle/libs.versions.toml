@@ -5,7 +5,7 @@ targetSdk = "36"
 minSdk = "26"
 
 ## Android gradle plugin
-androidGradlePlugin = "8.12.0"
+androidGradlePlugin = "8.13.0"
 
 # https://github.com/detekt/detekt
 detekt = "1.23.8"
@@ -14,7 +14,7 @@ detektTwitterComposeRule = "0.0.26"
 
 ## kotlin
 # https://github.com/JetBrains/kotlin
-kotlin = "2.2.10"
+kotlin = "2.2.20"
 # https://github.com/Kotlin/kotlinx.serialization
 kotlinSerializationJson = "1.9.0"
 # https://github.com/Kotlin/kotlinx.collections.immutable
@@ -22,7 +22,7 @@ kotlinxCollectionsImmutable = "0.4.0"
 
 ## KSP
 # https://github.com/google/ksp
-ksp = "2.2.10-2.0.2"
+ksp = "2.2.20-2.0.2"
 # https://github.com/square/kotlinpoet
 kotlinPoet = "2.2.0"
 # https://github.com/tschuchortdev/kotlin-compile-testing
@@ -38,7 +38,7 @@ coroutines-turbine = "1.2.1"
 # https://developer.android.com/jetpack/androidx/releases/annotation
 androidx-annotation = "1.9.1"
 # https://developer.android.com/jetpack/androidx/releases/lifecycle
-androidx-lifecycle = "2.9.2"
+androidx-lifecycle = "2.9.4"
 # https://developer.android.com/jetpack/androidx/releases/core
 androidx-core = "1.17.0"
 # https://developer.android.com/jetpack/androidx/releases/paging
@@ -47,20 +47,22 @@ androidx-paging = "3.3.6"
 androidx-dataStorePreferences = "1.1.7"
 
 # Compose
-composeBom = "2025.08.00"
+composeBom = "2025.09.00"
 # https://developer.android.com/jetpack/androidx/releases/navigation
-compose-navigation = "2.9.3"
+compose-navigation = "2.9.4"
 # https://developer.android.com/jetpack/androidx/releases/hilt
-compose-navigation-hilt = "1.2.0"
+compose-navigation-hilt = "1.3.0"
 # https://developer.android.com/jetpack/androidx/releases/constraintlayout
 compose-constraintLayout = "1.1.1"
 
 # https://developer.android.com/jetpack/androidx/releases/activity
-compose-activity = "1.10.1"
+compose-activity = "1.11.0"
 
 ## Google
 # https://github.com/material-components/material-components-android/releases
-google-material = "1.12.0"
+google-material = "1.13.0"
+# https://github.com/google/gson
+gson = "2.11.0"
 
 ## Network
 # https://square.github.io/okhttp/
@@ -70,7 +72,7 @@ network-retrofit = "3.0.0"
 
 ## Dagger
 # https://github.com/google/dagger
-android-dagger = "2.57"
+android-dagger = "2.57.1"
 
 ## Test
 # https://developer.android.com/jetpack/androidx/releases/test
@@ -78,11 +80,15 @@ test-androidx-core = "1.7.0"
 test-androidx-runner = "1.7.0"
 test-androidx-junit = "1.3.0"
 # https://github.com/robolectric/robolectric
-test-robolectric = "4.15.1"
+test-robolectric = "4.16"
 # https://github.com/mockito/mockito
 test-mockito = "5.19.0"
 # https://github.com/mockito/mockito-kotlin
 test-mockito-kotlin = "6.0.0"
+# https://github.com/mockk/mockk
+test-mockk = "1.13.14"
+# https://junit.org/junit4/
+test-junit = "4.13.2"
 
 [libraries]
 ## Kotlin
@@ -126,7 +132,17 @@ androidx-compose-navigation-hilt = { module = "androidx.hilt:hilt-navigation-com
 ## Google
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 
+## JSON
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+
 ## Network
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "network-okhttp" }
+okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "network-okhttp" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "network-retrofit" }
+retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "network-retrofit" }
+retrofit-converter-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "network-retrofit" }
+
+# Legacy network (keeping for compatibility)
 network-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "network-okhttp" }
 network-okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "network-okhttp" }
 network-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "network-retrofit" }
@@ -146,12 +162,14 @@ dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref =
 dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "android-dagger" }
 
 ## Test
+test-junit = { module = "junit:junit", version.ref = "test-junit" }
 test-androidx-core = { module = "androidx.test:core", version.ref = "test-androidx-core" }
 test-androidx-runner = { module = "androidx.test:runner", version.ref = "test-androidx-runner" }
 test-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "test-androidx-junit" }
 
 ## Test coroutine
 test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+test-kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 test-coroutines-turbine = { module = "app.cash.turbine:turbine", version.ref = "coroutines-turbine" }
 
 ## Test Hilt
@@ -160,6 +178,9 @@ test-hilt = { module = "com.google.dagger:hilt-android-testing", version.ref = "
 ## Test mockito
 test-mockito = { module = "org.mockito:mockito-core", version.ref = "test-mockito" }
 test-mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "test-mockito-kotlin" }
+
+## Test MockK
+test-mockk = { module = "io.mockk:mockk", version.ref = "test-mockk" }
 
 ## Robolectric
 test-robolectric = { module = "org.robolectric:robolectric", version.ref = "test-robolectric" }
