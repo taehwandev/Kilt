@@ -29,4 +29,5 @@ include(":app")
 include(
     ":core:kilt-generate-annotations",
     ":core:kilt-generate-dagger-ksp",
+    ":core:kilt-generate-hilt-ksp",
 )
