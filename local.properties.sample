@@ -1,0 +1,46 @@
+# Sample local.properties for Maven Central Publishing
+# Copy this file to local.properties and fill in your actual values
+# DO NOT commit local.properties to version control
+
+## SDK (Standard Android SDK configuration)
+sdk.dir=/Users/[YOUR_USERNAME]/Library/Android/sdk
+
+## Sonatype OSSRH Credentials
+# Create account at https://issues.sonatype.org
+ossrhUsername=your_sonatype_username
+ossrhPassword=your_sonatype_password
+
+## GPG Signing Configuration
+# Generate GPG key with: gpg --gen-key
+# List keys with: gpg --list-keys
+signing.keyId=YOUR_GPG_KEY_ID_LAST_8_CHARS
+signing.password=your_gpg_passphrase
+signing.secretKeyRingFile=/path/to/your/secring.gpg
+
+## Alternative: Use in-memory GPG key (for CI/CD)
+# signing.key=-----BEGIN PGP PRIVATE KEY BLOCK-----...-----END PGP PRIVATE KEY BLOCK-----
+
+## Publication Configuration (Optional - Override defaults from gradle.properties)
+# publication.groupId=com.example.yourproject
+# publication.artifactId=custom-artifact-name
+# publication.name=Your Project Name
+# publication.description=Your project description
+# publication.url=https://github.com/yourusername/yourproject
+# publication.license.name=Apache License, Version 2.0
+# publication.license.url=https://www.apache.org/licenses/LICENSE-2.0.txt
+# publication.developer.id=yourid
+# publication.developer.name=Your Name
+# publication.developer.email=your.email@example.com
+# publication.scm.connection=scm:git:git://github.com/yourusername/yourproject.git
+# publication.scm.developerConnection=scm:git:ssh://github.com:yourusername/yourproject.git
+# publication.scm.url=https://github.com/yourusername/yourproject
+
+## Repository Configuration (Optional - Override defaults)
+# publication.repository.release=https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/
+# publication.repository.snapshot=https://s01.oss.sonatype.org/content/repositories/snapshots/
+
+## Example GPG Key Generation:
+# gpg --gen-key
+# gpg --list-keys --keyid-format SHORT
+# gpg --export-secret-keys YOUR_KEY_ID > ~/.gnupg/secring.gpg
+# gpg --keyserver hkp://keyserver.ubuntu.com --send-keys YOUR_KEY_ID
